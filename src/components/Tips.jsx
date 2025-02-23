@@ -1,9 +1,9 @@
-function InterviewTips() {
+export default function Tips() {
     return (
         <>
         <h1>Interview Tips</h1>
         <div>
-            <h2>General</h2>
+            <h2>General:</h2>
             <p>
 
             </p>
@@ -12,7 +12,7 @@ function InterviewTips() {
             <h2>College Specific Resources:</h2>
         </div>
         <div>
-            <h3>Bouvé College of Health Sciences</h3>
+            <h3>Bouvé College of Health Sciences/College of Science</h3>
             <p>
 
             </p>
@@ -25,18 +25,6 @@ function InterviewTips() {
         </div>
         <div>
             <h3>College of Engineering</h3>
-            <p>
-                
-            </p>
-        </div>
-        <div>
-            <h3>College of Professional Studies</h3>
-            <p>
-                
-            </p>
-        </div>
-        <div>
-            <h3>College of Science</h3>
             <p>
                 
             </p>
