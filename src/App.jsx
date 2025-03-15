@@ -8,38 +8,21 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    // <>
-    //   <div>
-    //     <a href="https://vite.dev" target="_blank">
-    //       <img src={viteLogo} className="logo" alt="Vite logo" />
-    //     </a>
-    //     <a href="https://react.dev" target="_blank">
-    //       <img src={reactLogo} className="logo react" alt="React logo" />
-    //     </a>
-    //   </div>
-    //   <h1>Vite + React</h1>
-    //   <div className="card">
-    //     <button onClick={() => setCount((count) => count + 1)}>
-    //       count is {count}
-    //     </button>
-    //     <p>
-    //       Edit <code>src/App.jsx</code> and save to test HMR
-    //     </p>
-    //   </div>
-    //   <div>
-    //     <SignIn />
-    //   </div>
-    //   <p className="read-the-docs">
-    //     Click on the Vite and React logos to learn more
-    //   </p>
-    //   <div>
-    //     <Profile />
-    //   </div>
-    // </>
-    <div>
-      <Profile />
-    </div>
-  )
+    <Router>
+      <nav>
+        <ul>
+          <li><Link to="/">Sign In</Link></li>
+          <li><Link to="/profile">Profile</Link></li>
+          <li><Link to="/interview-tips">Interview Tips</Link></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/" element={<SignIn />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/interview-tips" element={<InterviewTips />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App
