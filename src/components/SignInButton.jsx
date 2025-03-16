@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function SignInButton() {
+export default function SignInButton() {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -11,5 +11,5 @@ function SignInButton() {
         <button onClick={handleClick}>
             Sign In
         </button>
-    )
+    );
 }

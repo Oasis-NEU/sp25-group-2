@@ -1,4 +1,3 @@
-import Tips from '../components/Tips';
 import NavBar from '../components/NavBar';
 
 export default function Profile() {
@@ -6,5 +5,5 @@ export default function Profile() {
         <>
         <NavBar />
         </>
-    )
+    );
 }
