@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Profile from './Profile';
+import './NavBar.css';
 
 export default function NavBar() {
   const [showApplicationsDropdown, setShowApplicationsDropdown] = useState(false);
@@ -10,35 +12,34 @@ export default function NavBar() {
 
   return (
     <nav className="horizontal-navbar">
-      <ul className="navbar-titles">
-        <li className="navbar-title">
-          <a href="#YourAccount" className="navbar-page">Your Account</a>
-        </li>
-        <li className="navbar-title dropdown">
-          <a href="#SignOut" className="navbar-page">Sign Out</a>
-          <a href="#Profile" className="navbar-page">Your Profile</a>
-        </li>
-        <li className="navbar-title dropdown">
-          <div 
-            className="navbar-page dropdown-toggle" 
-            onClick={toggleApplicationsDropdown}
-          >
-            Your Applications
-          </div>
-          {showApplicationsDropdown && (
-            <div className="dropdown-menu">
-              <Link to="/applications" className="dropdown-item">View Applications</Link>
-              <Link to="/add-application" className="dropdown-item">Add Application</Link>
+      <div className="nav-content">
+        {/* Left side navigation items */}
+        <ul className="nav-items">
+          <li className="nav-item dropdown">
+            <div 
+              className="nav-link dropdown-toggle" 
+              onClick={toggleApplicationsDropdown}
+            >
+              Your Applications
             </div>
-          )}
-        </li>
-        <li className="navbar-title">
-          <a href="#InterviewTips" className="navbar-page">Interview Tips</a>
-        </li>
-        <li className="navbar-title">
-          <a href="#Resources" className="navbar-page">Resources</a>
-        </li>
-      </ul>
+            {showApplicationsDropdown && (
+              <div className="dropdown-menu">
+                <Link to="/applications" className="dropdown-item">View Applications</Link>
+                <Link to="/add-application" className="dropdown-item">Add Application</Link>
+              </div>
+            )}
+          </li>
+          <li className="nav-item">
+            <Link to="/interview-tips" className="nav-link">Interview Tips</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/resources" className="nav-link">Resources</Link>
+          </li>
+        </ul>
+
+        {/* Right side profile */}
+        <Profile />
+      </div>
     </nav>
   );
 }
