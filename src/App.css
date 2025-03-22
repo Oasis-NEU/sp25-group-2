@@ -40,3 +40,144 @@
 .read-the-docs {
   color: #888;
 }
+
+/* InterviewTips.css */
+.interview-block {
+  width: 1000px;
+  height: 1000px;
+  padding: 5px;
+  border: 1px solid blue;
+  background-color: black;
+}
+
+/* Navbar styling */
+.horizontal-navbar {
+  background-color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-titles {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+
+.navbar-title {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-page {
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  display: block;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.navbar-page:hover {
+  background-color: #444;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-toggle:after {
+  content: "▼";
+  font-size: 0.7em;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #444;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown-item {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  .navbar-titles {
+    flex-direction: column;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+  }
+}
+
+.create-acc-container {
+    padding: 20px;
+  }
+  
+  .create-acc-container form {
+    width: 300px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff0000; 
+    color: white; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #cc0000; 
+  }
+  
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }

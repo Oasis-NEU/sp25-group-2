@@ -1,7 +1,7 @@
 export default function Tips() {
     return (
         <>
-        <h1>Interview Tips</h1>
+        <h1 className = "interview-block">Interview Tips</h1>
         <div>
             <h2>General:</h2>
             <p>
