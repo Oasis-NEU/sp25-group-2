@@ -11,14 +11,16 @@ export default function NavBar() {
   return (
     <nav className="horizontal-navbar">
       <ul className="navbar-titles">
-        <li className="navbar-title">
+        <li>
           <a href="#YourAccount" className="navbar-page">Your Account</a>
         </li>
-        <li className="navbar-title dropdown">
+        <li>
           <a href="#SignOut" className="navbar-page">Sign Out</a>
+        </li>
+        <li>
           <a href="#Profile" className="navbar-page">Your Profile</a>
         </li>
-        <li className="navbar-title dropdown">
+        <li className="dropdown">
           <div 
             className="navbar-page dropdown-toggle" 
             onClick={toggleApplicationsDropdown}
@@ -27,20 +29,18 @@ export default function NavBar() {
           </div>
           {showApplicationsDropdown && (
             <div className="dropdown-menu">
-              <Link to="/applications" className="dropdown-item">View Applications</Link>
-              <Link to="/add-application" className="dropdown-item">Add Application</Link>
+              <Link to="/applications" className="dropdown-titles">View Applications</Link>
+              <Link to="/applications-add" className="dropdown-titles">Add Application</Link>
             </div>
           )}
         </li>
-        <li className="navbar-title">
+        <li>
           <a href="#InterviewTips" className="navbar-page">Interview Tips</a>
         </li>
-        <li className="navbar-title">
+        <li>
           <a href="#Resources" className="navbar-page">Resources</a>
         </li>
       </ul>
     </nav>
   );
 }
-
-

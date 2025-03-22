@@ -1,15 +1,24 @@
-import { useNavigate } from "react-router-dom";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function SignInButton() {
-    const navigate = useNavigate();
+function SignOutButton() {
+  const navigate = useNavigate();
 
-    const handleClick = () => {
-        navigate('/Home'); // navigates to the SignIn page
-    };
+  const handleSignOut = () => {
+    localStorage.removeItem('user');
+    localStorage.removeItem('userName');
+    localStorage.removeItem('password');
 
-    return (
-        <button onClick={handleClick}>
-            Sign Out
-        </button>
-    );
+    navigate('/home');
+  };
+
+  return (
+    <button className="sign-out-button" onClick={handleSignOut}>
+      Sign Out
+    </button>
+  );
 }
+
+export default SignOutButton;
+
+

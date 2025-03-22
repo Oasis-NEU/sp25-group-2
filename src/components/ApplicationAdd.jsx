@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './ApplicationAdd.css';
+import NavBar from '../components/NavBar';
 
 export default function ApplicationAdd() {
   const navigate = useNavigate();
@@ -26,11 +26,16 @@ export default function ApplicationAdd() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Here you would typically make an API call to save the application
-      // For now, we'll just log the data
-      console.log('Submitting application:', formData);
+      // Get existing applications from localStorage
+      const existingApplications = JSON.parse(localStorage.getItem('applications') || '[]');
       
-      // After successful submission, redirect to applications list
+      // Add new application to the array
+      const updatedApplications = [...existingApplications, formData];
+      
+      // Save back to localStorage
+      localStorage.setItem('applications', JSON.stringify(updatedApplications));
+      
+      // Navigate back to applications list
       navigate('/applications');
     } catch (error) {
       console.error('Error submitting application:', error);

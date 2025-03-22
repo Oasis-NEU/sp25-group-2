@@ -1,9 +1,14 @@
+import NavBar from '../components/NavBar';
 import Tips from '../components/Tips';
 
 export default function InterviewTips() {
     return (
         <>
-        <Tips />
+            <NavBar />
+            <div className="interview-tips-container">
+                <h1>Interview Tips</h1>
+                <Tips />
+            </div>
         </>
     );
 }
