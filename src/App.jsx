@@ -20,6 +20,7 @@ function App() {
         <Route path="/" element={<SignIn />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/interview-tips" element={<InterviewTips />} />
+        <Route path="/createacc" element={<CreateAcc />} />
       </Routes>
     </Router>
   );
