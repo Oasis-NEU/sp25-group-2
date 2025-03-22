@@ -8,6 +8,12 @@ export default function NavBar() {
     setShowApplicationsDropdown(!showApplicationsDropdown);
   };
 
+  const [showApplicationsDropdown, setShowApplicationsDropdown] = useState(false);
+  
+  const toggleApplicationsDropdown = () => {
+    setShowApplicationsDropdown(!showApplicationsDropdown);
+  };
+
   return (
     <nav className="horizontal-navbar">
       <ul className="navbar-titles">
