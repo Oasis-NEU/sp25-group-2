@@ -1,29 +1,43 @@
 import { useState, useEffect } from 'react';
-import NavBar from '../components/NavBar';
+import Layout from '../components/Layout';
 import { Link } from 'react-router-dom';
+import ProgressBar from '../components/ProgressBar'; 
 
 export default function Applications() {
     const [applications, setApplications] = useState([]);
+
+    // Define status priority order
+    const statusPriority = {
+        'Not Started': 1,
+        'In Progress': 2,
+        'Submitted': 3,
+        'Interview Scheduled': 4,
+        'Offer Received': 5,
+        'Rejected': 6
+    };
 
     useEffect(() => {
         // Load applications from localStorage when component mounts
         const savedApplications = localStorage.getItem('applications');
         if (savedApplications) {
-            setApplications(JSON.parse(savedApplications));
+            const apps = JSON.parse(savedApplications);
+            // Sort applications by status priority
+            const sortedApps = [...apps].sort((a, b) => 
+                statusPriority[a.applicationStatus] - statusPriority[b.applicationStatus]
+            );
+            setApplications(sortedApps);
         }
     }, []);
 
     return (
-        <>
-            <NavBar />
-            <div className="applications-container">
-                <h2>Your Applications</h2>
+        <Layout>
+            <div>
+                <h2 className="application-title">YOUR APPLICATIONS</h2>
+                {/* ProgressBar component */}
+                {applications.length > 0 && <ProgressBar applications={applications} />}
                 {applications.length === 0 ? (
                     <div className="no-applications">
                         <p>You haven't added any applications yet.</p>
-                        <Link to="/applications-add" className="add-application-button">
-                            Add Your First Application
-                        </Link>
                     </div>
                 ) : (
                     <div className="applications-list">
@@ -52,6 +66,6 @@ export default function Applications() {
                     </div>
                 )}
             </div>
-        </>
+        </Layout>
     );
 }

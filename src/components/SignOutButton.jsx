@@ -5,11 +5,13 @@ function SignOutButton() {
   const navigate = useNavigate();
 
   const handleSignOut = () => {
+    // Clear any stored data
     localStorage.removeItem('user');
     localStorage.removeItem('userName');
     localStorage.removeItem('password');
-
-    navigate('/home');
+    
+    // Navigate to create account page
+    navigate('/');
   };
 
   return (

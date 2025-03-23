@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { createClient } from '@supabase/supabase-js';
 import { Link } from 'react-router-dom';
 
-const supabase = createClient("https://fhtcwplpwerxpsulpozu.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZodGN3cGxwd2VyeHBzdWxwb3p1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mzk3Mjg5NDMsImV4cCI6MjA1NTMwNDk0M30.D1db1cnYuDJGdq-ENR5Wlg1wSxzHaF64Il2o4JvWh2w");
-
-function SignIn() {
+function SignIn({ supabase }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -75,7 +72,7 @@ function SignIn() {
         </button>
         
         <p>
-          Don't have an account? <Link to="/create-account">Create Account</Link>
+          Don't have an account? <Link to="/">Create Account</Link>
         </p>
       </form>
     </div>

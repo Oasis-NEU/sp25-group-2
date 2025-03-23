@@ -6,7 +6,6 @@ export default function InterviewTips() {
         <>
             <NavBar />
             <div className="interview-tips-container">
-                <h1>Interview Tips</h1>
                 <Tips />
             </div>
         </>

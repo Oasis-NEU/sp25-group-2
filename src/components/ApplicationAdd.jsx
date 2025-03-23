@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import NavBar from '../components/NavBar';
 
 export default function ApplicationAdd() {
   const navigate = useNavigate();
@@ -110,13 +109,14 @@ export default function ApplicationAdd() {
         </div>
 
         <div className="form-group">
-          <label htmlFor="applicationStatus">Application Status</label>
+          <label htmlFor="applicationStatus">Application Status *</label>
           <select
             id="applicationStatus"
             name="applicationStatus"
             value={formData.applicationStatus}
             onChange={handleInputChange}
             className="form-input"
+            required
           >
             <option value="Not Started">Not Started</option>
             <option value="In Progress">In Progress</option>
